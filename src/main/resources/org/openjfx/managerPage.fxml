@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorClientPage" prefHeight="747.0" prefWidth="1024.0" stylesheets="@style/styleClientPage.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="386.0" layoutY="70.0" prefHeight="548.0" prefWidth="246.0" text="Good Food is Good Mood" wrapText="true">
+            <font>
+                <Font name="System Bold" size="54.0" />
+            </font>
+        </Label>
+        <Button layoutX="173.0" layoutY="99.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="My Menu" textOverrun="CLIP">
+            <padding>
+                <Insets right="55.0" />
+            </padding>
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="34.0" fitWidth="57.0" layoutX="277.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@style/arrow.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="173.0" layoutY="203.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="Orders">
+            <padding>
+                <Insets right="70.0" />
+            </padding>
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="277.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@style/arrow.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="173.0" layoutY="327.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="Contact">
+            <padding>
+                <Insets right="80.0" />
+            </padding>
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="34.0" fitWidth="61.0" layoutX="277.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@style/arrow.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="173.0" layoutY="451.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="Profile">
+            <padding>
+                <Insets right="80.0" />
+            </padding>
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="34.0" fitWidth="42.0" layoutX="277.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@style/arrow.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="173.0" layoutY="621.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="Logout">
+            <padding>
+                <Insets right="80.0" />
+            </padding>
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="277.0" layoutY="627.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <image>
+                <Image url="@style/arrow.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="112.0" fitWidth="246.0" layoutX="746.0" layoutY="14.0" pickOnBounds="true">
+            <image>
+                <Image url="@style/logo.png" />
+            </image>
+        </ImageView>
+        <Arc layoutX="881.0" layoutY="395.0" length="270.0" radiusX="210.0" radiusY="203.0" startAngle="45.0" strokeType="OUTSIDE" type="CHORD">
+            <fill>
+                <LinearGradient endX="1.0" endY="0.9083969474748801" startY="0.8778626318196304">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.686274528503418" green="0.06666667014360428" blue="0.29411765933036804" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+            <stroke>
+                <LinearGradient endX="1.0" endY="0.9083969474748801" startY="0.8778626318196304">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.6868420839309692" green="0.06741227954626083" blue="0.2945365607738495" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </stroke>
+        </Arc>
+        <Circle layoutX="872.0" layoutY="391.0" radius="120.0" stroke="WHITE" strokeType="INSIDE">
+            <fill>
+                <LinearGradient endX="1.0" endY="0.9083969474748801" startY="0.8778626318196304">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Circle>
+        <ImageView fitHeight="302.0" fitWidth="240.0" layoutX="772.0" layoutY="99.0" pickOnBounds="true">
+            <image>
+                <Image url="@style/homePage.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="312.0" fitWidth="446.0" layoutX="493.0" layoutY="240.0" pickOnBounds="true">
+            <image>
+                <Image url="@style/homePage2.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="261.0" fitWidth="315.0" layoutX="715.0" layoutY="395.0" pickOnBounds="true" rotate="-27.0">
+            <image>
+                <Image url="@style/homePage3.png" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="749.0" layoutX="25.0" layoutY="-1.0" opacity="0.8" strokeType="INSIDE" width="120.0">
+            <stroke>
+                <LinearGradient endX="1.0" endY="0.9083969474748801" startY="0.8778626318196304">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.371052622795105" green="0.04603801295161247" blue="0.1706269532442093" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </stroke>
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.686274528503418" green="0.06666667014360428" blue="0.29411765933036804" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Rectangle>
+    </children>
+</AnchorPane>

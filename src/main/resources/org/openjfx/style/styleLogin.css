@@ -1,0 +1,47 @@
+#anchorLogin {
+    -fx-background-image: url("log.jpg");
+    -fx-background-size: 565 568;
+    -fx-background-position: center center;
+}
+
+#signUpButton {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-effect: none;
+}
+
+.text-field {
+    -fx-background-color: transparent;
+    -fx-background-radius: 30;
+    -fx-border-color:linear-gradient(to right, black, rgba(167, 158, 158, 0), rgb(38, 38, 38));
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #323030;
+    -fx-font-family: 'Palatino Linotype', cursive;
+}
+
+.button {
+    -fx-border-color:linear-gradient(to right, black, rgba(0, 0, 0, 0), rgb(38 ,38 ,38));
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, grey, 10, 0.5, 2, 1);
+    -fx-font-family: 'Palatino Linotype', cursive;
+}
+
+.button:hover {
+    -fx-background-color: #c2cecf;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-font-family: 'Palatino Linotype', cursive;
+}
+
+#message {
+    -fx-text-fill: red;
+    -fx-font-family: 'Palatino Linotype', cursive;
+    -fx-font-weight: bold;
+}
+
+
+
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorLogin" prefHeight="535.0" prefWidth="478.0" stylesheets="@style/styleLogin.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.Login">
+   <children>
+      <ImageView fitHeight="99.0" fitWidth="200.0" layoutX="266.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/logo.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="password" layoutX="27.0" layoutY="181.0" opacity="0.81" prefHeight="38.0" prefWidth="221.0" promptText="Password">
+         <font>
+            <Font name="Fira Code Bold" size="16.0" />
+         </font></PasswordField>
+      <Label layoutX="35.0" layoutY="426.0" text="Don't have any account?">
+         <font>
+            <Font name="Palatino Linotype" size="14.0" />
+         </font></Label>
+      <TextField fx:id="username" layoutX="27.0" layoutY="132.0" opacity="0.81" prefHeight="38.0" prefWidth="221.0" promptText="Username">
+         <font>
+            <Font name="Fira Code Bold" size="16.0" />
+         </font></TextField>
+      <Button fx:id="signUpButton" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="197.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleSignUp" scaleShape="false" text="Sign up Here" textAlignment="CENTER" underline="true">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="loginButton" layoutX="27.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="38.0" prefWidth="221.0" text="CONTINUE  " />
+      <Text fx:id="message" fill="#e20909" layoutX="35.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="213.13671875" />
+       </children>
+</AnchorPane>

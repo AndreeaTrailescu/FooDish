@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorSignUp" prefHeight="698.0" prefWidth="849.0" stylesheets="@style/styleSignUp.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.SignUpController">
+   <children>
+      <Arc layoutX="789.0" layoutY="427.0" length="270.0" opacity="0.72" radiusX="110.0" radiusY="103.0" startAngle="45.0" strokeLineCap="ROUND" strokeLineJoin="ROUND">
+         <fill>
+            <LinearGradient endX="0.8854961832061069" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.75" green="0.08194444328546524" blue="0.08194444328546524" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="0.8854961832061069" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <Blend mode="DARKEN" />
+         </effect>
+      </Arc>
+      <Circle layoutX="742.0" layoutY="527.0" radius="50.0" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.8358778689653819" startX="0.6793893270820152">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.048786550760269165" green="0.3131854236125946" blue="0.5605263113975525" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="0.8358778689653819" startX="0.6793893270820152">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.048786550760269165" green="0.3131854236125946" blue="0.5605263113975525" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <Blend mode="DARKEN" opacity="0.0" />
+         </effect>
+      </Circle>
+      <Circle layoutX="809.0" layoutY="285.0" radius="30.0" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.8358778689653819" startX="0.6793893270820152" startY="0.11832062524693614">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8763157725334167" green="0.7865204811096191" blue="0.20285087823867798" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="0.8358778689653819" startX="0.6793893270820152" startY="0.11832062524693614">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8763157725334167" green="0.7865204811096191" blue="0.20285087823867798" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <Blend mode="LIGHTEN" opacity="0.38" />
+         </effect>
+      </Circle>
+      <Arc layoutX="72.0" layoutY="110.0" length="270.0" opacity="0.7" radiusX="101.0" radiusY="96.0" startAngle="-135.0" strokeType="INSIDE" type="CHORD">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.8358778689653819" startX="0.6793893270820152" startY="0.11832062524693614">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18565788865089417" green="0.6552631855010986" blue="0.24827192723751068" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="0.8358778689653819" startX="0.6793893270820152" startY="0.11832062524693614">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18565788865089417" green="0.6552631855010986" blue="0.24827192723751068" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <Blend mode="GREEN" />
+         </effect>
+      </Arc>
+      <Circle layoutX="155.0" layoutY="61.0" radius="42.0" strokeType="INSIDE">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.47709925302112377" startX="0.40744272625173317" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.550000011920929" green="0.016499999910593033" blue="0.4062471091747284" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9511450381679388">
+                     <color>
+                        <Color red="0.41990000009536743" green="0.10199999809265137" blue="0.6800000071525574" opacity="0.006055363919585943" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.41990000009536743" green="0.10199999809265137" blue="0.6800000071525574" opacity="0.006055363919585943" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="0.8854961832061069" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7815789580345154" green="0.609342098236084" blue="0.7327784895896912" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <effect>
+            <Blend mode="DARKEN" />
+         </effect>
+      </Circle>
+      <ImageView fitHeight="67.0" fitWidth="149.0" layoutX="698.0" layoutY="19.0" pickOnBounds="true">
+         <image>
+            <Image url="@style/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="273.0" layoutY="52.0" text="Username" />
+      <Label layoutX="274.0" layoutY="129.0" text="Password" />
+      <Label layoutX="274.0" layoutY="197.0" text="E-mail" />
+      <Label layoutX="266.0" layoutY="262.0" text="Confirm password" />
+      <Label layoutX="271.0" layoutY="331.0" text="Town" />
+      <Label layoutX="269.0" layoutY="409.0" text="Country" />
+      <CheckBox fx:id="role" layoutX="261.0" layoutY="478.0" mnemonicParsing="false" text="Select this if you want to sign up as a restaurant manager.">
+         <font>
+            <Font name="Palatino Linotype Bold" size="14.0" />
+         </font></CheckBox>
+      <Label layoutX="271.0" layoutY="518.0" text="Restaurant" />
+      <Label layoutX="273.0" layoutY="597.0" text="Location(street, no.)" />
+      <PasswordField fx:id="password" layoutX="270.0" layoutY="147.0" prefHeight="40.0" prefWidth="248.0" />
+      <PasswordField fx:id="confirmPassword" layoutX="270.0" layoutY="282.0" prefHeight="40.0" prefWidth="248.0" />
+      <TextField fx:id="username" layoutX="270.0" layoutY="70.0" prefHeight="40.0" prefWidth="248.0" />
+      <TextField fx:id="eMail" layoutX="270.0" layoutY="215.0" prefHeight="40.0" prefWidth="248.0" />
+      <TextField fx:id="town" layoutX="270.0" layoutY="349.0" prefHeight="40.0" prefWidth="248.0" />
+      <TextField fx:id="country" layoutX="270.0" layoutY="427.0" prefHeight="40.0" prefWidth="248.0" />
+      <TextField fx:id="restaurant" layoutX="270.0" layoutY="536.0" prefHeight="40.0" prefWidth="248.0" />
+      <TextField fx:id="location" layoutX="270.0" layoutY="614.0" prefHeight="40.0" prefWidth="248.0" />
+      <Button fx:id="loginButton" cacheShape="false" centerShape="false" focusTraversable="false" layoutX="-68.0" layoutY="383.0" mnemonicParsing="false" onAction="#backToStart" prefHeight="47.0" prefWidth="211.0" rotate="-90.0" scaleShape="false" style="-fx-border-color: transparent; -fx-effect: none;" text="Back to log in" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="Palatino Linotype Bold Italic" size="24.0" />
+         </font></Button>
+      <Button fx:id="continueButton" layoutX="570.0" layoutY="615.0" mnemonicParsing="false" onAction="#handleContinue" prefHeight="38.0" prefWidth="221.0" text="CONTINUE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Text fx:id="messageUsername" fill="#e20909" layoutX="537.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.0" />
+      <Text fx:id="message" fill="#e20909" layoutX="537.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.0" />
+   </children>
+</AnchorPane>
