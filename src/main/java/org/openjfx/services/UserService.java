@@ -1,6 +1,5 @@
 package org.openjfx.services;
 
-import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.exceptions.IncorrectConfirmPassword;
 import org.openjfx.exceptions.IncorrectLoginException;
@@ -14,18 +13,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
-import static org.openjfx.services.LoginService.getPathToFile;
-
 public class UserService {
     private static ObjectRepository<User> userRepository;
-    private static Nitrite database;
 
     public static void initDatabase() {
-        LoginService.initDirectory();
-        database = Nitrite.builder()
-                .filePath(getPathToFile("login-database.db").toFile())
-                .openOrCreate("test", "test");
-        userRepository = database.getRepository(User.class);
+        userRepository = DatabaseService.getDatabase().getRepository(User.class);
     }
 
     public static String encodePassword(String salt, String password) {
@@ -55,10 +47,6 @@ public class UserService {
 
     public static void addManager(String username, String password, String eMail, String role, String country, String town, String nameOfRestaurant, String location) {
         userRepository.insert(new Manager(username,encodePassword(username, password),eMail,role,country,town,nameOfRestaurant,location));
-    }
-
-    public static Nitrite getDatabase() {
-        return database;
     }
 
     public static ObjectRepository<User> getUserRepository() {

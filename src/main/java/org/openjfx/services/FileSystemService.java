@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class LoginService {
+public class FileSystemService {
     public static String LOGIN_FOLDER = ".login-database";
     private static final String USER_FOLDER = System.getProperty("user.home");
 
@@ -17,7 +17,7 @@ public class LoginService {
     }
 
     public static void initDirectory() {
-        Path applicationHomePath = LoginService.getLoginFolder();
+        Path applicationHomePath = FileSystemService.getLoginFolder();
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
     }
