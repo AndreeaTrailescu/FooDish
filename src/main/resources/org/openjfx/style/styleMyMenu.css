@@ -1,0 +1,40 @@
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color:linear-gradient(to right, black, rgba(0, 0, 0, 0), rgb(7, 7, 7));
+    -fx-text-fill: #000000, bold;
+    -fx-prompt-text-fill: #323030;
+    -fx-font-family: 'Palatino Linotype', cursive;
+    -fx-border-radius: 50;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 10, 0.0, 0.0, 10);
+}
+
+#anchorMyMenu {
+    -fx-background-image: url("background.jpg");
+    -fx-background-size: 1240 820;
+}
+
+#searchButton {
+    -fx-background-radius: 30;
+    -fx-background-color: #514f4f;
+    -fx-font-family: 'Palatino Linotype', cursive;
+}
+
+.label {
+    -fx-font-family: 'Palatino Linotype', cursive;
+    -fx-effect: dropshadow(three-pass-box, grey, 10, 0.5, 3, 1);
+}
+
+.spinner {
+    -fx-background-color: transparent;
+}
+
+.button {
+    -fx-border-width: 1;
+    -fx-background-radius: 45;
+    -fx-border-color:linear-gradient(to right, black, rgba(0, 0, 0, 0), rgb(255, 255, 255));
+    -fx-border-radius: 40;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-family: 'Palatino Linotype', cursive;
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0.7, 3, -2);
+}
