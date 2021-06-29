@@ -128,7 +128,7 @@
          </left>
          <top>
             <HBox prefHeight="100.0" prefWidth="1032.0" BorderPane.alignment="CENTER">
-               <Button fx:id="back" layoutX="173.0" layoutY="621.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="Back">
+               <Button fx:id="back" layoutX="173.0" layoutY="621.0" mnemonicParsing="false" onAction="#backToManagerPage" prefHeight="46.0" prefWidth="144.0" text="Back">
                   <padding>
                      <Insets right="80.0" />
                   </padding>
@@ -147,7 +147,7 @@
                      <Insets left="-40.0" top="35.0" />
                   </HBox.margin>
                </ImageView>
-               <Button layoutX="173.0" layoutY="621.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="200.0" text="Add New Dish">
+               <Button fx:id="addNewDish" layoutX="173.0" layoutY="621.0" mnemonicParsing="false" onAction="#handleAddDish" prefHeight="46.0" prefWidth="200.0" text="Add New Dish">
                   <font>
                      <Font name="System Bold" size="14.0" />
                   </font>

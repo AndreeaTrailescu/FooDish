@@ -25,6 +25,20 @@ public class ManagerHomePageController {
     private Scene scene;
 
     @FXML
+    public void handleMyMenu() {
+        try {
+            Stage stage = (Stage) myMenu.getScene().getWindow();
+            scene = new Scene(loadFXML("myMenu"));
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     public void handleLogout() {
         try {
             Stage stage = (Stage) logout.getScene().getWindow();
@@ -37,4 +51,5 @@ public class ManagerHomePageController {
             e.printStackTrace();
         }
     }
+
 }

@@ -121,5 +121,4 @@ public class SignUpController implements Initializable {
             messageUsername.setText(eee.getMessage());
         }
     }
-
 }

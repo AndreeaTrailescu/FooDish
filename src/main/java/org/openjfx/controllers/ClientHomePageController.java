@@ -1,15 +1,20 @@
 package org.openjfx.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.openjfx.model.User;
+import org.openjfx.model.UserHolder;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import static org.openjfx.App.loadFXML;
 
-public class ClientHomePageController {
+public class ClientHomePageController implements Initializable {
 
     @FXML
     private Button viewMenu;
@@ -24,6 +29,12 @@ public class ClientHomePageController {
 
     private Scene scene;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        UserHolder client = UserHolder.getInstance();
+        User c = client.getUser();
+    }
+
     @FXML
     public void handleLogout() {
         try {
@@ -37,4 +48,5 @@ public class ClientHomePageController {
             e.printStackTrace();
         }
     }
+
 }

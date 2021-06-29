@@ -9,7 +9,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.exceptions.IncorrectLoginException;
-import org.openjfx.model.User;
+import org.openjfx.model.*;
 import org.openjfx.services.UserService;
 
 import java.io.IOException;
@@ -45,12 +45,16 @@ public class Login {
 
                 if(loggedUser.getRole().equals("client")) {
                     Stage stage = (Stage) loginButton.getScene().getWindow();
+                    UserHolder holder = UserHolder.getInstance();
+                    holder.setUser(loggedUser);
                     scene = new Scene(loadFXML("clientPage"));
                     stage.setScene(scene);
                     stage.centerOnScreen();
                     stage.show();
                 } else {
                     Stage stage = (Stage) loginButton.getScene().getWindow();
+                    UserHolder holder = UserHolder.getInstance();
+                    holder.setUser(loggedUser);
                     scene = new Scene(loadFXML("managerPage"));
                     stage.setScene(scene);
                     stage.centerOnScreen();
