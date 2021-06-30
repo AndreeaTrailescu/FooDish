@@ -235,5 +235,10 @@
          </font></Button>
       <Text fx:id="messageUsername" fill="#e20909" layoutX="537.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.0" />
       <Text fx:id="message" fill="#e20909" layoutX="537.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.0" />
+      <ImageView fitHeight="21.0" fitWidth="23.0" layoutX="843.0" layoutY="4.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/xsign.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

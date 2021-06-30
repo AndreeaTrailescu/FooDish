@@ -6,8 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.openjfx.services.LoginService;
-import org.openjfx.services.UserService;
+import org.openjfx.services.*;
 
 import java.io.IOException;
 
@@ -17,8 +16,12 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        LoginService.initDirectory();
-        UserService.initDatabase();
+        FileSystemService.initDirectory();
+        DatabaseService.initDatabase();
+        ClientService.initDatabase();
+        ManagerService.initDatabase();
+        DishService.initDatabase();
+
         scene = new Scene(loadFXML("startPage"));
         stage.setScene(scene);
         stage.setResizable(false);

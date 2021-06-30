@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorSignUp" prefHeight="518.0" prefWidth="678.0" stylesheets="@style/styleSignUp.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.AddDishController">
+   <children>
+      <Label layoutX="348.0" layoutY="25.0" prefHeight="66.0" prefWidth="205.0" text="Add New Dish" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Arc layoutX="617.0" layoutY="341.0" length="270.0" opacity="0.91" radiusX="85.0" radiusY="79.0" startAngle="45.0" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, gray, 5, 0.9, -6, 7);" type="CHORD">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.19083969010651566" startY="0.21374047257518042">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.16986273229122162" green="0.05804580822587013" blue="0.7289473414421082" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Arc>
+      <Circle layoutX="532.0" layoutY="430.0" radius="45.0" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, gray, 0, 0.0, -4, 5);">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.19083969010651566" startY="0.21374047257518042">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.956944465637207" green="1.0" blue="0.1388888955116272" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8552631735801697" green="0.8283910155296326" blue="0.04909843951463699" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Circle>
+      <Label layoutX="94.0" layoutY="134.0" text="Name of the Dish">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameOfDish" layoutX="314.0" layoutY="124.0" prefHeight="34.0" prefWidth="245.0" />
+      <Label layoutX="114.0" layoutY="200.0" text="Ingredients">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ingredients" layoutX="313.0" layoutY="192.0" prefHeight="34.0" prefWidth="246.0" />
+      <TextField fx:id="price" layoutX="314.0" layoutY="257.0" prefHeight="34.0" prefWidth="196.0" />
+      <Label layoutX="135.0" layoutY="265.0" text="Price">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imageDish" fitHeight="173.0" fitWidth="246.0" layoutX="62.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="loadPhoto" layoutX="368.0" layoutY="331.0" mnemonicParsing="false" onAction="#loadAddPhoto" prefHeight="53.0" prefWidth="80.0" text="Load Photo" />
+      <Button fx:id="saveButton" layoutX="348.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleSaveDish" prefHeight="44.0" prefWidth="120.0" text="SAVE" />
+      <Button fx:id="back" layoutX="63.0" layoutY="31.0" mnemonicParsing="false" onAction="#backToMyMenu" prefHeight="46.0" prefWidth="144.0" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Text fx:id="message" fill="#ed1111" layoutX="563.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Palatino Linotype', cursive;" textAlignment="CENTER" wrappingWidth="101.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

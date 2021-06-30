@@ -35,5 +35,10 @@
       </Button>
       <Button fx:id="loginButton" layoutX="27.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="38.0" prefWidth="221.0" text="CONTINUE  " />
       <Text fx:id="message" fill="#e20909" layoutX="35.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="213.13671875" />
+      <ImageView fitHeight="18.0" fitWidth="23.0" layoutX="456.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/xsign.png" />
+         </image>
+      </ImageView>
        </children>
 </AnchorPane>

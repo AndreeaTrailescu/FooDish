@@ -9,8 +9,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.exceptions.IncorrectLoginException;
-import org.openjfx.model.User;
-import org.openjfx.services.UserService;
+import org.openjfx.model.*;
+import org.openjfx.services.ClientService;
+import org.openjfx.services.ManagerService;
 
 import java.io.IOException;
 
@@ -30,33 +31,45 @@ public class Login {
     @FXML
     private Button signUpButton;
 
-    private static ObjectRepository<User> USER_REPOSITORY;
+    private static ObjectRepository<Manager> MANAGER_REPOSITORY;
+    private static ObjectRepository<Client> CLIENT_REPOSITORY;
     private Scene scene;
 
     @FXML
     public void handleLogin() {
-        USER_REPOSITORY = UserService.getUserRepository();
         try {
-            boolean testUser = UserService.checkUserDoesAlreadyExist(username.getText(), password.getText());
+            boolean testClient = ClientService.checkUserDoesAlreadyExist(username.getText(), password.getText());
 
-            if(testUser) {
+            if(testClient) {
+                CLIENT_REPOSITORY = ClientService.getClientRepository();
+                Client loggedClient = CLIENT_REPOSITORY.find(eq("username", username.getText())).firstOrDefault();
 
-                User loggedUser = USER_REPOSITORY.find(eq("username", username.getText())).firstOrDefault();
-
-                if(loggedUser.getRole().equals("client")) {
+                if(loggedClient.getRole().equals("client")) {
                     Stage stage = (Stage) loginButton.getScene().getWindow();
+                    ClientHolder holder = ClientHolder.getInstance();
+                    holder.setClient(loggedClient);
                     scene = new Scene(loadFXML("clientPage"));
                     stage.setScene(scene);
                     stage.centerOnScreen();
                     stage.show();
-                } else {
-                    Stage stage = (Stage) loginButton.getScene().getWindow();
-                    scene = new Scene(loadFXML("managerPage"));
-                    stage.setScene(scene);
-                    stage.centerOnScreen();
-                    stage.show();
                 }
+            } else {
+                MANAGER_REPOSITORY = ManagerService.getManagerRepository();
+                boolean testManager = ManagerService.checkUserDoesAlreadyExist(username.getText(), password.getText());
 
+                if(testManager) {
+                    Manager loggedManager = MANAGER_REPOSITORY.find(eq("username", username.getText())).firstOrDefault();
+
+                    if(loggedManager.getRole().equals("manager")) {
+                        Stage stage = (Stage) loginButton.getScene().getWindow();
+                        ManagerHolder holder = ManagerHolder.getInstance();
+                        holder.setManager(loggedManager);
+                        scene = new Scene(loadFXML("managerPage"));
+                        stage.setScene(scene);
+                        stage.centerOnScreen();
+                        stage.show();
+                    }
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,4 +91,9 @@ public class Login {
         }
     }
 
+    @FXML
+    public void handleClose() {
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.close();
+    }
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorClientPage" prefHeight="747.0" prefWidth="1024.0" stylesheets="@style/styleClientPage.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorClientPage" prefHeight="747.0" prefWidth="1024.0" stylesheets="@style/styleClientPage.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.ClientHomePageController">
    <children>
       <Label layoutX="365.0" layoutY="70.0" prefHeight="548.0" prefWidth="246.0" text="Delicious Food is Waiting For you" wrapText="true">
          <font>
@@ -67,7 +67,7 @@
             <Image url="@style/arrow.png" />
          </image>
       </ImageView>
-      <Button layoutX="173.0" layoutY="621.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="Logout">
+      <Button fx:id="logout" layoutX="173.0" layoutY="621.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="46.0" prefWidth="144.0" text="Logout">
          <padding>
             <Insets right="80.0" />
          </padding>
@@ -186,5 +186,10 @@
             </LinearGradient>
          </fill>
       </Rectangle>
+      <ImageView fitHeight="22.0" fitWidth="26.0" layoutX="999.0" layoutY="3.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/xsign.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

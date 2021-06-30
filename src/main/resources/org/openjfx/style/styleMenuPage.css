@@ -1,0 +1,20 @@
+#anchorMenuPage {
+    -fx-background-image: url("background.jpg");
+    -fx-background-size: 1025 800;
+    -fx-background-position: center center;
+}
+
+#back {
+    -fx-border-width: 1;
+    -fx-background-radius: 45;
+    -fx-border-color:linear-gradient(to right, black, rgba(0, 0, 0, 0), rgb(255, 255, 255));
+    -fx-border-radius: 40;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-family: 'Palatino Linotype', cursive;
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0.7, 3, -2);
+}
+
+.text {
+    -fx-font-family: 'Palatino Linotype', cursive;
+}
