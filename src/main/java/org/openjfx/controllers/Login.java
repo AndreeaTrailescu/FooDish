@@ -91,4 +91,9 @@ public class Login {
         }
     }
 
+    @FXML
+    public void handleClose() {
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.close();
+    }
 }

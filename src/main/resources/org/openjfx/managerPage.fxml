@@ -186,5 +186,10 @@
                 </LinearGradient>
             </fill>
         </Rectangle>
+      <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="1001.0" layoutY="3.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@style/xsign.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

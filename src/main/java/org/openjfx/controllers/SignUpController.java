@@ -138,4 +138,10 @@ public class SignUpController implements Initializable {
             messageUsername.setText(eee.getMessage());
         }
     }
+
+    @FXML
+    public void handleClose() {
+        Stage stage = (Stage) continueButton.getScene().getWindow();
+        stage.close();
+    }
 }

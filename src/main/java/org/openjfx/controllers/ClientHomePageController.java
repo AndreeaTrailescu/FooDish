@@ -49,4 +49,10 @@ public class ClientHomePageController implements Initializable {
         }
     }
 
+    @FXML
+    public void handleClose() {
+        Stage stage = (Stage) logout.getScene().getWindow();
+        stage.close();
+    }
+
 }
