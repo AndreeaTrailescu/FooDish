@@ -31,4 +31,5 @@ public class DishService {
         if(imagePath != null && !nameOfDish.getText().isEmpty() && !price.getText().isEmpty() && !ingredients.getText().isEmpty()) return true;
         else throw new AddingFieldsIncomplete();
     }
+
 }

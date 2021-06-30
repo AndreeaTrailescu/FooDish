@@ -1,41 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorDishItem" prefHeight="220.0" prefWidth="253.0" style="-fx-background-radius: 20;" stylesheets="@style/styleDishItem.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.DishItemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#click" prefHeight="191.0" prefWidth="223.0" style="-fx-background-radius: 20; -fx-background-color: linear-gradient(to bottom,#af114b,white); -fx-border-color: transparent;" stylesheets="@style/styleDishItem.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.DishItemController">
    <children>
-      <VBox layoutX="70.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-color: transparent; -fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <HBox prefHeight="61.0" prefWidth="254.0" style="-fx-background-radius: 20; -fx-border-insets: 10; -fx-border-color: transparent; -fx-background-color: transparent;">
-               <children>
-                  <Label fx:id="dishName" prefHeight="70.0" prefWidth="166.0" text="-">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label fx:id="dishPrice" prefHeight="70.0" prefWidth="87.0" text="-">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
-            <ImageView fx:id="dishImage" fitHeight="150.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="30.0" />
-               </VBox.margin>
-            </ImageView>
-         </children>
-      </VBox>
+      <ImageView fx:id="dishImage" fitHeight="87.0" fitWidth="153.0" layoutX="35.0" layoutY="52.0" pickOnBounds="true" />
+      <Label fx:id="dishName" alignment="CENTER" layoutX="26.0" layoutY="14.0" prefHeight="33.0" prefWidth="171.0" textAlignment="CENTER" />
+      <Label fx:id="dishPrice" layoutX="84.0" layoutY="135.0" prefHeight="33.0" prefWidth="70.0" />
+      <Label layoutX="154.0" layoutY="134.0" prefHeight="34.0" prefWidth="43.0" text="RON" />
    </children>
 </AnchorPane>

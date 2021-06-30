@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import org.openjfx.model.ClientHolder;
 import org.openjfx.model.Manager;
 import org.openjfx.model.ManagerHolder;
 

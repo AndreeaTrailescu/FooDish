@@ -24,4 +24,24 @@ public class Dish {
     }
 
     public Dish() {}
+
+    public String getUsernameManager() {
+        return usernameManager;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public String getNameOfDish() {
+        return nameOfDish;
+    }
 }
