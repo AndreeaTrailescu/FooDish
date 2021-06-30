@@ -4,20 +4,18 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.exceptions.IncorrectConfirmPassword;
 import org.openjfx.exceptions.IncorrectLoginException;
 import org.openjfx.exceptions.UsernameExists;
-import org.openjfx.model.Client;
 import org.openjfx.model.Manager;
-import org.openjfx.model.User;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
-public class UserService {
-    private static ObjectRepository<User> userRepository;
+public class ManagerService {
+    private static ObjectRepository<Manager> managerRepository;
 
     public static void initDatabase() {
-        userRepository = DatabaseService.getDatabase().getRepository(User.class);
+        managerRepository = DatabaseService.getDatabase().getRepository(Manager.class);
     }
 
     public static String encodePassword(String salt, String password) {
@@ -41,20 +39,17 @@ public class UserService {
         return md;
     }
 
-    public static void addClient(String username, String password, String eMail, String role, String country, String town) {
-        userRepository.insert(new Client(username,encodePassword(username, password),eMail,role,country,town));
-    }
-
     public static void addManager(String username, String password, String eMail, String role, String country, String town, String nameOfRestaurant, String location) {
-        userRepository.insert(new Manager(username,encodePassword(username, password),eMail,role,country,town,nameOfRestaurant,location));
+        managerRepository.insert(new Manager(username,encodePassword(username, password),eMail,role,country,town,nameOfRestaurant,location));
     }
 
-    public static ObjectRepository<User> getUserRepository() {
-        return userRepository;
+    public static ObjectRepository<Manager> getManagerRepository() {
+        return managerRepository;
     }
+
 
     public static boolean checkUserDoesAlreadyExist(String username, String password) throws IncorrectLoginException {
-        for (User user : userRepository.find()) {
+        for (Manager user : managerRepository.find()) {
             if (Objects.equals(username, user.getUsername())) {
                 if(!Objects.equals(user.getPassword(), encodePassword(username,password)))
                     throw new IncorrectLoginException(password);
@@ -70,7 +65,7 @@ public class UserService {
     }
 
     public static boolean checkUsernameIsAvailable(String username) throws UsernameExists {
-        for(User user : userRepository.find()) {
+        for(Manager user : managerRepository.find()) {
             if(Objects.equals(username, user.getUsername())) throw new UsernameExists(username);
         }
         return true;

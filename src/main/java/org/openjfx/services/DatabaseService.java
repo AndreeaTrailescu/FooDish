@@ -2,15 +2,17 @@ package org.openjfx.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.openjfx.model.Client;
 import org.openjfx.model.Dish;
-import org.openjfx.model.User;
+import org.openjfx.model.Manager;
 
 import static org.openjfx.services.FileSystemService.getPathToFile;
 
 public class DatabaseService {
 
     private static Nitrite database;
-    private static ObjectRepository<User>  userRepository;
+    private static ObjectRepository<Client>  clientRepository;
+    private static ObjectRepository<Manager>  managerRepository;
     private static ObjectRepository<Dish>  dishesRepository;
 
     public static void initDatabase() {
@@ -19,7 +21,8 @@ public class DatabaseService {
                 .filePath(getPathToFile("login-database.db").toFile())
                 .openOrCreate("test", "test");
 
-        userRepository = database.getRepository(User.class);
+        clientRepository = database.getRepository(Client.class);
+        managerRepository = database.getRepository(Manager.class);
         dishesRepository = database.getRepository(Dish.class);
     }
 

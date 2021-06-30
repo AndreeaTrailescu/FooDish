@@ -5,8 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import org.openjfx.model.User;
-import org.openjfx.model.UserHolder;
+import org.openjfx.model.Client;
+import org.openjfx.model.ClientHolder;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,8 +31,8 @@ public class ClientHomePageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        UserHolder client = UserHolder.getInstance();
-        User c = client.getUser();
+        ClientHolder client = ClientHolder.getInstance();
+        Client c = client.getClient();
     }
 
     @FXML

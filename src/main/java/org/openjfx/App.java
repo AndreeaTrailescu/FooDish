@@ -6,10 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.openjfx.services.DatabaseService;
-import org.openjfx.services.DishService;
-import org.openjfx.services.FileSystemService;
-import org.openjfx.services.UserService;
+import org.openjfx.services.*;
 
 import java.io.IOException;
 
@@ -21,7 +18,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         FileSystemService.initDirectory();
         DatabaseService.initDatabase();
-        UserService.initDatabase();
+        ClientService.initDatabase();
+        ManagerService.initDatabase();
         DishService.initDatabase();
 
         scene = new Scene(loadFXML("startPage"));
