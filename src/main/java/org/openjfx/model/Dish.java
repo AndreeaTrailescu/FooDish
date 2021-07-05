@@ -44,4 +44,8 @@ public class Dish {
     public String getNameOfDish() {
         return nameOfDish;
     }
+
+    public String getRestaurant() {
+        return restaurant;
+    }
 }

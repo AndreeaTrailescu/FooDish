@@ -4,11 +4,13 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.exceptions.IncorrectConfirmPassword;
 import org.openjfx.exceptions.IncorrectLoginException;
 import org.openjfx.exceptions.UsernameExists;
+import org.openjfx.model.Dish;
 import org.openjfx.model.Manager;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.Objects;
 
 public class ManagerService {
@@ -69,5 +71,9 @@ public class ManagerService {
             if(Objects.equals(username, user.getUsername())) throw new UsernameExists(username);
         }
         return true;
+    }
+
+    public static List<Manager> getAllManagers() {
+        return managerRepository.find().toList();
     }
 }

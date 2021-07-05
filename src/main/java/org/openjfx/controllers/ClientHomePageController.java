@@ -36,6 +36,20 @@ public class ClientHomePageController implements Initializable {
     }
 
     @FXML
+    public void handleViewMenu() {
+        try {
+            Stage stage = (Stage) viewMenu.getScene().getWindow();
+            scene = new Scene(loadFXML("menuPage"));
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     public void handleLogout() {
         try {
             Stage stage = (Stage) logout.getScene().getWindow();
