@@ -15,7 +15,7 @@
             <Font name="System Bold" size="54.0" />
          </font>
       </Label>
-      <Button layoutX="173.0" layoutY="99.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" text="View Menu" textOverrun="CLIP">
+      <Button fx:id="viewMenu" layoutX="173.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleViewMenu" prefHeight="46.0" prefWidth="144.0" text="View Menu" textOverrun="CLIP">
          <padding>
             <Insets right="55.0" />
          </padding>

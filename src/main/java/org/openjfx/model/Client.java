@@ -34,4 +34,12 @@ public class Client {
     public String getPassword() {
         return password;
     }
+
+    public String getTown() {
+        return town;
+    }
+
+    public String getCountry() {
+        return country;
+    }
 }
