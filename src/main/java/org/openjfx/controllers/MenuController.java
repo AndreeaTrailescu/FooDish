@@ -1,24 +1,26 @@
 package org.openjfx.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.dizitart.no2.NitriteId;
 import org.openjfx.listeners.DishListListener;
 import org.openjfx.model.*;
 import org.openjfx.services.DishService;
 import org.openjfx.services.ManagerService;
+import org.openjfx.services.OrderService;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,6 +51,12 @@ public class MenuController implements Initializable {
     private TextField searchBar;
     @FXML
     private Button orderButton;
+    @FXML
+    private Spinner<Integer> spinner;
+    @FXML
+    private Label totalPrice;
+    @FXML
+    private Text message;
 
     private Scene scene;
     private Client user;
@@ -58,6 +66,16 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
+            dishesList = new ArrayList<>();
+            initSpinner();
+            spinner.valueProperty().addListener(new ChangeListener<Integer>() {
+                @Override
+                public void changed(ObservableValue<? extends Integer> observableValue, Integer oldValue, Integer newValue) {
+                    if(!dishPrice.getText().isEmpty())
+                        totalPrice.setText(String.valueOf(spinner.getValue() * Double.parseDouble(dishPrice.getText())));
+                }
+            });
+
             int column = 0;
             int row = 1;
             ClientHolder client = ClientHolder.getInstance();
@@ -99,6 +117,13 @@ public class MenuController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void initSpinner() {
+        spinner.setValueFactory(
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0,10,0)
+        );
+        totalPrice.setText(String.valueOf(0));
     }
 
     @FXML
@@ -154,6 +179,17 @@ public class MenuController implements Initializable {
     @FXML
     public void reloadScene() {
         try {
+            dishesList = new ArrayList<>();
+            scrollPane.setVvalue(0);
+            initSpinner();
+            spinner.valueProperty().addListener(new ChangeListener<Integer>() {
+                @Override
+                public void changed(ObservableValue<? extends Integer> observableValue, Integer oldValue, Integer newValue) {
+                    if(!dishPrice.getText().isEmpty())
+                        totalPrice.setText(String.valueOf(spinner.getValue() * Double.parseDouble(dishPrice.getText())));
+                }
+            });
+
             int column = 0;
             int row = 1;
             dishListListener = new DishListListener() {
@@ -197,6 +233,7 @@ public class MenuController implements Initializable {
     }
 
     private void setChosenDish(Dish dish) throws MalformedURLException {
+        initSpinner();
         dishName.setText(dish.getNameOfDish());
         dishPrice.setText(dish.getPrice());
         nameRestaurant.setText(dish.getRestaurant());
@@ -218,6 +255,16 @@ public class MenuController implements Initializable {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void takeDish() {
+        for(Dish d : dishesList) {
+            if(d.getNameOfDish().equals(dishName.getText()) && !dishName.getText().isEmpty()) {
+                OrderService.addOrder(String.valueOf(NitriteId.newId()),dishName.getText(),user.getUsername(),totalPrice.getText(),d.getUsernameManager(),spinner.getValue());
+                message.setText("Successfully ordered!");
+            }
         }
     }
 }

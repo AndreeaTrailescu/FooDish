@@ -21,6 +21,7 @@ public class App extends Application {
         ClientService.initDatabase();
         ManagerService.initDatabase();
         DishService.initDatabase();
+        OrderService.initDatabase();
 
         scene = new Scene(loadFXML("startPage"));
         stage.setScene(scene);

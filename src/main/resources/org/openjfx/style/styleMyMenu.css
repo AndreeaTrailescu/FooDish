@@ -59,3 +59,19 @@
     -fx-background-color:  linear-gradient(to top,#af114b,white);
     -fx-background-radius: 5;
 }
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-body-color: #000000;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-body-color: ladder(#ffffff, #ffffff 40%, #ffffff 100%);
+}
+
+#message {
+    -fx-text-fill: red;
+    -fx-font-family: 'Palatino Linotype', cursive;
+    -fx-font-weight: bold;
+}
