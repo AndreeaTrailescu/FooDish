@@ -1,17 +1,19 @@
 package org.openjfx.controllers;
 
-import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.dizitart.no2.NitriteId;
+import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.exceptions.AddingFieldsIncomplete;
+import org.openjfx.model.Dish;
+import org.openjfx.model.DishHolder;
 import org.openjfx.model.Manager;
 import org.openjfx.model.ManagerHolder;
 import org.openjfx.services.DishService;
@@ -24,8 +26,7 @@ import java.util.ResourceBundle;
 
 import static org.openjfx.App.loadFXML;
 
-
-public class AddDishController implements Initializable {
+public class EditDishController implements Initializable {
 
     @FXML
     private Button saveButton;
@@ -44,14 +45,17 @@ public class AddDishController implements Initializable {
     private String imagePath;
     private File file;
 
-
     private Scene scene;
     private Manager user;
+    private Dish dish;
+    private final ObjectRepository<Dish> DISH_REPOSITORY = DishService.getDishesRepository();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ManagerHolder manager = ManagerHolder.getInstance();
         user = manager.getManager();
+        DishHolder holder = DishHolder.getInstance();
+        dish = holder.getDish();
     }
 
     @FXML
@@ -93,7 +97,7 @@ public class AddDishController implements Initializable {
             boolean test = DishService.testEveryFieldIsCompleted(nameOfDish, ingredients, price, imagePath);
 
             if(test) {
-                DishService.addDish(NitriteId.newId().toString(), nameOfDish.getText(), ingredients.getText(), price.getText(), user.getNameOfRestaurant(), user.getUsername(), imagePath);
+                updateDish();
                 Stage stage = (Stage) saveButton.getScene().getWindow();
                 ManagerHolder holder = ManagerHolder.getInstance();
                 holder.setManager(user);
@@ -108,5 +112,13 @@ public class AddDishController implements Initializable {
         } catch (AddingFieldsIncomplete ee) {
             message.setText(ee.getMessage());
         }
+    }
+
+    private void updateDish() {
+        dish.setNameOfDish(nameOfDish.getText());
+        dish.setIngredients(ingredients.getText());
+        dish.setPhotoPath(imagePath);
+        dish.setPrice(price.getText());
+        DISH_REPOSITORY.update(dish);
     }
 }
