@@ -273,7 +273,18 @@ public class MyMenuController implements Initializable {
         Optional<ButtonType> option = alert.showAndWait();
         if(option.get() == yes) {
             DISH_REPOSITORY.remove(and(eq("nameOfDish", dishName.getText()), eq("price",dishPrice.getText()), eq("usernameManager", user.getUsername())));
-            reloadScene();
+            try {
+                Stage stage = (Stage) editButton.getScene().getWindow();
+                ManagerHolder holder = ManagerHolder.getInstance();
+                holder.setManager(user);
+                scene = new Scene(loadFXML("myMenu"));
+                stage.setScene(scene);
+                stage.centerOnScreen();
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
