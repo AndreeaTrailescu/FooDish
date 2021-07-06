@@ -45,6 +45,26 @@ public class Dish {
         return nameOfDish;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNameOfDish(String nameOfDish) {
+        this.nameOfDish = nameOfDish;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
+    }
+
     public String getRestaurant() {
         return restaurant;
     }

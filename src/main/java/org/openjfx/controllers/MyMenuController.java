@@ -17,6 +17,7 @@ import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import org.openjfx.listeners.DishListListener;
 import org.openjfx.model.Dish;
+import org.openjfx.model.DishHolder;
 import org.openjfx.model.Manager;
 import org.openjfx.model.ManagerHolder;
 import org.openjfx.services.DishService;
@@ -50,6 +51,8 @@ public class MyMenuController implements Initializable {
     private TextField searchBar;
     @FXML
     private Button closeButton;
+    @FXML
+    private Button editButton;
 
     private Scene scene;
     private Manager user;
@@ -59,6 +62,7 @@ public class MyMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
+            dishesList = new ArrayList<>();
             int column = 0;
             int row = 1;
             ManagerHolder client = ManagerHolder.getInstance();
@@ -176,6 +180,7 @@ public class MyMenuController implements Initializable {
     @FXML
     public void reloadScene() {
         try {
+            dishesList = new ArrayList<>();
             int column = 0;
             int row = 1;
             dishListListener = new DishListListener() {
@@ -227,5 +232,28 @@ public class MyMenuController implements Initializable {
         File file = new File(dish.getPhotoPath());
         Image image = new Image(file.toURI().toURL().toExternalForm(),false);
         dishImage.setImage(image);
+    }
+
+    @FXML
+    public void handleEdit() {
+        try {
+            Stage stage = (Stage) editButton.getScene().getWindow();
+            ManagerHolder holder = ManagerHolder.getInstance();
+            holder.setManager(user);
+            for(Dish d : dishesList) {
+                if(d.getNameOfDish().equals(dishName.getText()) && d.getPrice().equals(dishPrice.getText())) {
+                    DishHolder dish = DishHolder.getInstance();
+                    dish.setDish(d);
+                    break;
+                }
+            }
+            scene = new Scene(loadFXML("editPage"));
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
