@@ -5,16 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import org.dizitart.no2.objects.ObjectRepository;
 import org.openjfx.listeners.DishListListener;
 import org.openjfx.model.Dish;
 import org.openjfx.model.DishHolder;
@@ -27,8 +25,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.and;
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 import static org.openjfx.App.loadFXML;
 
 public class MyMenuController implements Initializable {
@@ -58,6 +59,7 @@ public class MyMenuController implements Initializable {
     private Manager user;
     private ArrayList<Dish> dishesList = new ArrayList<>();
     private DishListListener dishListListener;
+    private final ObjectRepository<Dish> DISH_REPOSITORY = DishService.getDishesRepository();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -254,6 +256,24 @@ public class MyMenuController implements Initializable {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleDelete() {
+        ButtonType yes = new ButtonType("YES");
+        ButtonType no = new ButtonType("NO");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Dish");
+        alert.setHeaderText("Are you sure want to move this file to the Recycle Bin?");
+        alert.setGraphic(null);
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().addAll(yes,no);
+
+        Optional<ButtonType> option = alert.showAndWait();
+        if(option.get() == yes) {
+            DISH_REPOSITORY.remove(and(eq("nameOfDish", dishName.getText()), eq("price",dishPrice.getText()), eq("usernameManager", user.getUsername())));
+            reloadScene();
         }
     }
 }

@@ -97,7 +97,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="105.0" text="Delete">
+                              <Button mnemonicParsing="false" onAction="#handleDelete" prefHeight="38.0" prefWidth="105.0" text="Delete">
                                  <HBox.margin>
                                     <Insets left="100.0" right="20.0" top="50.0" />
                                  </HBox.margin>
